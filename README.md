@@ -1,4 +1,4 @@
-## Generador de Horóscopos con Trigramas
+## Generador de Horóscopos con 3-grams
 
 Este no es un oráculo místico. Es un generador de horóscopos retro-NLP, donde la magia no viene de los astros, sino de un viejo conocido: los modelos de lenguaje basados en trigramas.
 
