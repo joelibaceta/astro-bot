@@ -1,0 +1,5 @@
+env
+horoscopos.csv
+.env
+prepare_data.py
+__pycache__
