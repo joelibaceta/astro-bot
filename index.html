@@ -33,173 +33,140 @@
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 min-h-screen">
+<body class="bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 min-h-screen flex flex-col">
     <!-- Header -->
     <header class="bg-black/20 backdrop-blur-lg border-b border-white/10">
         <div class="container mx-auto px-4 py-6">
             <h1 class="text-3xl md:text-4xl font-bold text-white text-center">
-                ✨ Predicciones Astrológicas AI ✨
+                ✨ Predicciones AI ✨
             </h1>
             <p class="text-center text-blue-200 mt-2 text-lg">
-                Descubre lo que las estrellas tienen preparado para ti
+                Descubre lo que la estadística tiene preparado para ti
             </p>
         </div>
     </header>
 
-    <div class="container mx-auto px-4 py-8">
-        <!-- Selección de Signo -->
-        <div id="zodiac-selection" class="max-w-6xl mx-auto">
-            <h2 class="text-2xl font-bold text-white text-center mb-8">
-                Selecciona tu signo zodiacal:
-            </h2>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('ARIES')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♈</div>
+    <main class="flex-grow">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Selección de Signo -->
+            <div id="zodiac-selection" class="max-w-6xl mx-auto">
+                <h2 class="text-2xl font-bold text-white text-center mb-8">
+                    Selecciona tu signo zodiacal
+                </h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('ARIES')">
+                        <div class="text-4xl mb-3">♈</div>
                         <h3 class="text-white font-semibold">Aries</h3>
-                        <p class="text-blue-200 text-sm">Mar 21 - Abr 19</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('TAURO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♉</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('TAURO')">
+                        <div class="text-4xl mb-3">♉</div>
                         <h3 class="text-white font-semibold">Tauro</h3>
-                        <p class="text-blue-200 text-sm">Abr 20 - May 20</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('GEMINIS')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♊</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('GEMINIS')">
+                        <div class="text-4xl mb-3">♊</div>
                         <h3 class="text-white font-semibold">Géminis</h3>
-                        <p class="text-blue-200 text-sm">May 21 - Jun 20</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('CANCER')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♋</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('CANCER')">
+                        <div class="text-4xl mb-3">♋</div>
                         <h3 class="text-white font-semibold">Cáncer</h3>
-                        <p class="text-blue-200 text-sm">Jun 21 - Jul 22</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('LEO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♌</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('LEO')">
+                        <div class="text-4xl mb-3">♌</div>
                         <h3 class="text-white font-semibold">Leo</h3>
-                        <p class="text-blue-200 text-sm">Jul 23 - Ago 22</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('VIRGO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♍</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('VIRGO')">
+                        <div class="text-4xl mb-3">♍</div>
                         <h3 class="text-white font-semibold">Virgo</h3>
-                        <p class="text-blue-200 text-sm">Ago 23 - Sep 22</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('LIBRA')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♎</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('LIBRA')">
+                        <div class="text-4xl mb-3">♎</div>
                         <h3 class="text-white font-semibold">Libra</h3>
-                        <p class="text-blue-200 text-sm">Sep 23 - Oct 22</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('ESCORPIO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♏</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('ESCORPIO')">
+                        <div class="text-4xl mb-3">♏</div>
                         <h3 class="text-white font-semibold">Escorpio</h3>
-                        <p class="text-blue-200 text-sm">Oct 23 - Nov 21</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('SAGITARIO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♐</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('SAGITARIO')">
+                        <div class="text-4xl mb-3">♐</div>
                         <h3 class="text-white font-semibold">Sagitario</h3>
-                        <p class="text-blue-200 text-sm">Nov 22 - Dic 21</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('CAPRICORNIO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♑</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('CAPRICORNIO')">
+                        <div class="text-4xl mb-3">♑</div>
                         <h3 class="text-white font-semibold">Capricornio</h3>
-                        <p class="text-blue-200 text-sm">Dic 22 - Ene 19</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('ACUARIO')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♒</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('ACUARIO')">
+                        <div class="text-4xl mb-3">♒</div>
                         <h3 class="text-white font-semibold">Acuario</h3>
-                        <p class="text-blue-200 text-sm">Ene 20 - Feb 18</p>
                     </div>
-                </div>
-                
-                <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-xl p-4 cursor-pointer border border-white/20" onclick="selectZodiac('PISCIS')">
-                    <div class="text-center">
-                        <div class="text-4xl mb-2">♓</div>
+                    
+                    <div class="zodiac-card bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center cursor-pointer border border-white/20 hover:border-purple-300/50" onclick="selectZodiac('PISCIS')">
+                        <div class="text-4xl mb-3">♓</div>
                         <h3 class="text-white font-semibold">Piscis</h3>
-                        <p class="text-blue-200 text-sm">Feb 19 - Mar 20</p>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Área de Predicción -->
-        <div id="prediction-area" class="hidden max-w-4xl mx-auto mt-12">
-            <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20">
-                <div class="text-center mb-6">
-                    <h2 class="text-3xl font-bold text-white mb-2">
-                        <span id="selected-sign"></span>
-                        <span id="selected-emoji" class="ml-2"></span>
-                    </h2>
+            <!-- Área de Predicción -->
+            <div id="prediction-area" class="hidden max-w-4xl mx-auto">
+                <div class="text-center mb-8">
                     <button 
                         onclick="goBack()" 
-                        class="text-blue-300 hover:text-white transition-colors duration-300 underline">
-                        ← Cambiar signo
+                        class="bg-white/10 hover:bg-white/20 text-white px-6 py-2 rounded-full border border-white/30 transition-all duration-300">
+                        ← Volver a signos
                     </button>
                 </div>
 
-                <div id="loading" class="hidden text-center py-12">
-                    <div class="inline-flex items-center space-x-1 text-white text-xl">
-                        <span>Consultando las estrellas</span>
-                        <div class="flex space-x-1">
-                            <div class="w-2 h-2 bg-blue-400 rounded-full loading-dots"></div>
-                            <div class="w-2 h-2 bg-blue-400 rounded-full loading-dots" style="animation-delay: 0.2s;"></div>
-                            <div class="w-2 h-2 bg-blue-400 rounded-full loading-dots" style="animation-delay: 0.4s;"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="prediction-content" class="hidden">
-                    <div class="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-xl p-6 mb-6 border border-yellow-300/30">
-                        <h3 class="text-xl font-semibold text-white mb-4 text-center">🔮 Tu predicción para hoy:</h3>
-                        <div id="prediction-text" class="prediction-text text-white leading-relaxed">
-                            <!-- La predicción generada aparecerá aquí -->
-                        </div>
+                <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-8 border border-white/20 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <div class="text-6xl mb-4" id="selected-emoji">♈</div>
+                        <h2 class="text-3xl font-bold text-white" id="selected-sign">Aries</h2>
                     </div>
 
-                    <div class="text-center">
-                        <button 
-                            onclick="generateNewPrediction()" 
-                            class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                            ✨ Generar nueva predicción
-                        </button>
+                    <!-- Loading State -->
+                    <div id="loading" class="text-center py-12">
+                        <div class="inline-flex space-x-2 mb-4">
+                            <div class="w-3 h-3 bg-purple-400 rounded-full loading-dots"></div>
+                            <div class="w-3 h-3 bg-purple-400 rounded-full loading-dots" style="animation-delay: 0.2s"></div>
+                            <div class="w-3 h-3 bg-purple-400 rounded-full loading-dots" style="animation-delay: 0.4s"></div>
+                        </div>
+                        <p class="text-white text-lg">Consultando las estrellas...</p>
+                    </div>
+
+                    <!-- Prediction Content -->
+                    <div id="prediction-content" class="hidden">
+                        <div class="bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-xl p-6 mb-6 border border-yellow-300/30">
+                            <h3 class="text-xl font-semibold text-white mb-4 text-center">🔮 Tu predicción para hoy:</h3>
+                            <div id="prediction-text" class="prediction-text text-white leading-relaxed">
+                                <!-- La predicción generada aparecerá aquí -->
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button 
+                                onclick="generateNewPrediction()" 
+                                class="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                ✨ Generar nueva predicción
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="mt-16 bg-black/20 backdrop-blur-lg border-t border-white/10">
+    <footer class="mt-auto bg-black/20 backdrop-blur-lg border-t border-white/10">
         <div class="container mx-auto px-4 py-6 text-center text-blue-200">
             <p>&copy; 2024 Predicciones Astrológicas AI. Powered by Machine Learning ✨</p>
         </div>
@@ -329,80 +296,50 @@
                 var result = [randomStart.w2];
                 var currentTrigram = randomStart;
             }
-
-            for (let i = 0; i < maxWords; i++) {
-                if (!currentTrigram || !currentTrigram.next || currentTrigram.next.length === 0) {
-                    break;
-                }
-
-                // Seleccionar la siguiente palabra basada en probabilidades
-                const nextWord = selectNextWord(currentTrigram.next);
-                
-                if (nextWord === null || nextWord === '.') {
-                    if (result.length > 20) { // Solo terminar si tenemos suficiente texto
-                        result.push('.');
-                        break;
-                    }
-                }
-
-                if (nextWord !== null) {
-                    result.push(nextWord);
-                }
-
-                // Buscar el siguiente trigrama
-                const w1 = result[result.length - 2];
-                const w2 = result[result.length - 1];
-                
-                currentTrigram = model.find(t => t.w1 === w1 && t.w2 === w2);
-                
-                if (!currentTrigram) {
-                    // Si no encontramos el trigrama exacto, buscar uno que comience con w2
-                    currentTrigram = model.find(t => t.w1 === w2) || 
-                                   model[Math.floor(Math.random() * model.length)];
-                }
-            }
-
-            // Filtrar nulls y limpiar el texto
-            const cleanText = result
-                .filter(word => word !== null)
-                .join(' ')
-                .replace(/\s+([.,;:!?])/g, '$1') // Eliminar espacios antes de puntuación
-                .replace(/\s+/g, ' ') // Normalizar espacios múltiples
-                .trim();
-
-            return cleanText || "Las estrellas sugieren un día lleno de nuevas oportunidades y crecimiento personal.";
-        }
-
-        function selectNextWord(nextOptions) {
-            // Crear array de palabras ponderado por probabilidad
-            const weightedOptions = [];
-            nextOptions.forEach(option => {
-                const weight = Math.floor(option.p * 100);
-                for (let i = 0; i < weight; i++) {
-                    weightedOptions.push(option.w3);
-                }
-            });
-
-            if (weightedOptions.length === 0) {
-                return null;
-            }
-
-            return weightedOptions[Math.floor(Math.random() * weightedOptions.length)];
-        }
-
-        function typeWriter(text, elementId, speed = 30) {
-            const element = document.getElementById(elementId);
-            element.innerHTML = '';
             
-            let i = 0;
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
+            // Generar el texto
+            for (let i = 0; i < maxWords * 3; i++) {
+                if (result.length >= maxWords) break;
+                
+                const w1 = currentTrigram.w1;
+                const w2 = currentTrigram.w2;
+                
+                // Buscar trigramas que coincidan con w1, w2
+                const nextTrigrams = model.filter(t => t.w1 === w1 && t.w2 === w2);
+                
+                if (nextTrigrams.length === 0) break;
+                
+                // Seleccionar siguiente palabra basada en probabilidades
+                const trigram = nextTrigrams[0];
+                const nextWord = selectNextWord(trigram.next);
+                
+                if (nextWord === null) break; // Fin de oración
+                
+                result.push(nextWord);
+                
+                // Actualizar contexto para siguiente iteración
+                currentTrigram = { w1: w2, w2: nextWord };
+            }
+            
+            return result.join(' ') + '.';
+        }
+
+        function selectNextWord(options) {
+            if (!options || options.length === 0) return null;
+            
+            // Calcular palabra basada en probabilidades
+            const random = Math.random();
+            let cumulative = 0;
+            
+            for (let option of options) {
+                cumulative += option.p;
+                if (random <= cumulative) {
+                    return option.w3;
                 }
             }
-            type();
+            
+            // Fallback: devolver la primera opción
+            return options[0].w3;
         }
 
         async function generateNewPrediction() {
@@ -438,32 +375,37 @@
             globalModel = null; // Limpiar también el modelo global
         }
 
+        function typeWriter(text, elementId) {
+            const element = document.getElementById(elementId);
+            element.innerHTML = '';
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, 30);
+                }
+            }
+            
+            type();
+        }
+
         // Agregar efecto de partículas de estrellas (opcional)
         function createStars() {
             const body = document.body;
             
             for (let i = 0; i < 50; i++) {
                 const star = document.createElement('div');
-                star.className = 'fixed w-1 h-1 bg-white rounded-full opacity-70';
+                star.className = 'fixed w-1 h-1 bg-white rounded-full opacity-70 animate-pulse';
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                star.style.animation = 'twinkle 3s infinite';
+                star.style.animationDelay = Math.random() * 2 + 's';
                 body.appendChild(star);
             }
         }
 
-        // Agregar animación de parpadeo para las estrellas
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes twinkle {
-                0%, 100% { opacity: 0.3; }
-                50% { opacity: 1; }
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Inicializar estrellas cuando la página carga
+        // Crear estrellas al cargar la página
         window.addEventListener('load', createStars);
     </script>
 </body>

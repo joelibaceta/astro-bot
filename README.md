@@ -1,18 +1,20 @@
 ## Generador de Horóscopos con Trigramas
 
-Este no es un oráculo místico ni un canal en YouTube con astrología de medianoche. Es un generador de horóscopos retro-NLP, donde la magia no viene de los astros, sino de un viejo conocido: los modelos de lenguaje basados en trigramas.
+Este no es un oráculo místico. Es un generador de horóscopos retro-NLP, donde la magia no viene de los astros, sino de un viejo conocido: los modelos de lenguaje basados en trigramas.
 
-Un trigram(a) es simplemente un modelo que predice la próxima palabra en base a las dos anteriores. Nada de “conexión cósmica con el universo”: pura probabilidad condicional. Así se hacía NLP antes de los Transformers, cuando los modelos cabían en un disquete y no necesitabas hipotecar tu casa para comprar una GPU.
+Un trigrama es basicamente un modelo que predice la próxima palabra en base a las dos anteriores. Nada de “conexión cósmica con el universo”, pura probabilidad condicional. 
 
-Claro, a veces los resultados suenan más como Yoda con insomnio que como un horóscopo real. Pero con algunos trucos clásicos —como 4-gram con backoff o un Kneser-Ney modificado para trigram/4-gram— la cosa se pone más convincente.
+Así se hacía NLP antes de los Transformers, cuando los modelos cabían en un disquete y no necesitabas dejar de comer para comprar una GPU.
 
-Lo mejor: estos modelos pesan lo mismo que un sticker de WhatsApp. Menos de 5 MB en JSON y bajo 1 MB comprimidos. Sí, tu futuro en un archivo más chico que la foto de tu desayuno en Instagram.
+Claro, a veces los resultados suenan más como Yoda con insomnio que como un horóscopo real. Pero con algunos trucos clásicos —como 4-gram con backoff o un Kneser-Ney modificado para trigram/4-gram— los resultados pueden ser bastante buenos.
 
-Así que no es magia, es estadística. 
+Lo mejor: estos modelos pesan lo mismo que un sticker de WhatsApp. Menos de 5 MB en JSON y bajo 1 MB comprimidos. Por eso podemos portarlos modelos directamente al navegador nada de APIs o pagar por token.
+
+No es magia, es estadística.
 
 ### ¿Qué hace y qué NO hace?
-- Hace: aprende patrones locales de palabras del corpus (e.g., “hoy”, “en el amor”, “trabajo”, “número de suerte”) y genera nuevos textos similares combinando esas piezas con probabilidades.
-- NO hace: no “adivina” el futuro. Solo modela lenguaje: estima qué palabra suele seguir a otras dos (trigrama).
+- *Hace:* aprende patrones locales de palabras del corpus (e.g., “hoy”, “en el amor”, “trabajo”, “número de suerte”) y genera nuevos textos similares combinando esas piezas con probabilidades.
+- *NO hace:* no “adivina” el futuro. Solo modela lenguaje: estima qué palabra suele seguir a otras dos (trigrama).
 
 ## ¿Cómo funciona?
 
