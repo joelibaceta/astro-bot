@@ -18,7 +18,7 @@ No es magia, es estadística.
 
 ## ¿Cómo funciona?
 
-La probabilidad de una secuencia de palabras \( w_1, \dots, w_T \) se puede descomponer paso a paso como un producto de probabilidades condicionales:
+La probabilidad de una secuencia de palabras $w_1, \dots, w_T$ se puede descomponer paso a paso como un producto de probabilidades condicionales:
 
 $$
 P(w_1,\dots,w_T) = \prod_{t=1}^{T} P\!\left(w_t \mid w_1,\dots,w_{t-1}\right).
