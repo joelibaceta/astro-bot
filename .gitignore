@@ -3,3 +3,4 @@ horoscopos.csv
 .env
 prepare_data.py
 __pycache__
+.DS_Store
