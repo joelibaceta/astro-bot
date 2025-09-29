@@ -242,15 +242,11 @@
             
             try {
                 // Cargar el modelo del signo
-                console.log('🔍 Cargando modelo para:', sign);
                 currentModel = await loadModel(sign);
-                console.log('✅ Modelo cargado exitosamente. Trigramas:', currentModel.length);
                 
                 // Generar predicción
                 await generatePrediction();
             } catch (error) {
-                console.error('❌ Error completo al cargar el modelo:', error);
-                console.error('❌ Stack trace:', error.stack);
                 currentModel = null;
                 
                 let errorMessage = 'Error desconocido al cargar la predicción';
@@ -267,43 +263,33 @@
 
         async function loadModel(sign) {
             try {
-                console.log('📂 Cargando archivo:', `../models/trigram_${sign}.json`);
-                const response = await fetch(`../models/trigram_${sign}.json`);
+                const response = await fetch(`./models/trigram_${sign}.json`);
                 
                 if (!response.ok) {
                     throw new Error(`Error HTTP al cargar el modelo: ${response.status} - ${response.statusText}`);
                 }
                 
-                console.log('✅ Archivo descargado, parseando JSON...');
                 const data = await response.json();
-                console.log('🔍 Estructura del archivo:', Object.keys(data));
                 
                 // Verificar si es formato híbrido con metadatos
                 if (data.format && data.format === 'trigram-v1' && data.rows) {
-                    console.log('📋 Formato híbrido detectado. Trigramas en rows:', data.rows.length);
                     // Formato híbrido: extraer el array de trigramas de la propiedad "rows"
                     if (!Array.isArray(data.rows)) {
                         throw new Error('El modelo híbrido debe tener un array de trigramas en la propiedad "rows"');
                     }
                     return data.rows;
                 } else if (Array.isArray(data)) {
-                    console.log('📋 Formato directo detectado. Trigramas:', data.length);
                     // Formato directo: el data ya es un array de trigramas
                     return data;
                 } else {
-                    console.error('❌ Estructura desconocida del archivo:', data);
                     throw new Error('El modelo debe ser un array de trigramas o tener formato híbrido válido');
                 }
             } catch (error) {
-                console.error('❌ Error detallado cargando modelo:', error);
                 throw error;
             }
         }
 
         async function generatePrediction() {
-            console.log('🎯 Generando predicción. Modelo disponible:', !!currentModel);
-            console.log('🔢 Trigramas en el modelo:', currentModel ? currentModel.length : 'N/A');
-            
             if (!currentModel) {
                 throw new Error('Modelo no cargado. Asegúrate de que el archivo del modelo existe y es válido.');
             }
@@ -315,9 +301,7 @@
             // Simular delay para mejor UX
             await new Promise(resolve => setTimeout(resolve, 1500));
 
-            console.log('📝 Generando texto con', currentModel.length, 'trigramas');
             const prediction = generateText(currentModel, 100);
-            console.log('✅ Predicción generada exitosamente');
             
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('prediction-content').classList.remove('hidden');
@@ -329,7 +313,6 @@
         function generateText(model, maxWords) {
             // Verificar que el modelo sea válido
             if (!model || !Array.isArray(model) || model.length === 0) {
-                console.error('Modelo inválido o vacío');
                 return "Las estrellas sugieren un día lleno de nuevas oportunidades y crecimiento personal.";
             }
             
