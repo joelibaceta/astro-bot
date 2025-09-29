@@ -208,6 +208,7 @@
     <script>
         let currentModel = null;
         let currentSign = null;
+        let globalModel = null;
 
         const zodiacEmojis = {
             'ARIES': '♈',
@@ -408,7 +409,25 @@
             document.getElementById('loading').classList.remove('hidden');
             document.getElementById('prediction-content').classList.add('hidden');
             
-            await generatePrediction();
+            try {
+                // Cargar el modelo global si no está cargado
+                if (!globalModel) {
+                    globalModel = await loadModel('global');
+                }
+                
+                // Usar el modelo global temporalmente
+                const originalModel = currentModel;
+                currentModel = globalModel;
+                
+                await generatePrediction();
+                
+                // Restaurar el modelo original del signo
+                currentModel = originalModel;
+                
+            } catch (error) {
+                // Si falla, usar el modelo del signo actual
+                await generatePrediction();
+            }
         }
 
         function goBack() {
@@ -416,6 +435,7 @@
             document.getElementById('zodiac-selection').style.display = 'block';
             currentModel = null;
             currentSign = null;
+            globalModel = null; // Limpiar también el modelo global
         }
 
         // Agregar efecto de partículas de estrellas (opcional)
