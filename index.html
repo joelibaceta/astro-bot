@@ -301,7 +301,7 @@
             // Simular delay para mejor UX
             await new Promise(resolve => setTimeout(resolve, 1500));
 
-            const prediction = generateText(currentModel, 100);
+            const prediction = generateText(currentModel, 45);
             
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('prediction-content').classList.remove('hidden');
